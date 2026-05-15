@@ -1,0 +1,478 @@
+:root {
+    /* Colores principales */
+    --primary-color: #2563EB;       
+    --primary-hover: #1D4ED8;        
+    --primary-dark: #1E3A5F;         
+    
+    /* Fondos y superficies */
+    --bg-color: #F8FAFC;             
+    --card-bg: #FFFFFF;              
+    
+    /* Tipografía */
+    --text-primary: #0F172A;         /* Texto principal  */
+    --text-secondary: #475569;       /* Texto secundario  */
+    
+    /* Bordes y estados */
+    --border-color: #CBD5E1;         /* Bordes sutiles */
+    --border-focus: #2563EB;         /* Borde azul al hacer focus */
+    --error-bg: #FEF2F2;             /* Fondo rojo suave para errores */
+    --error-text: #991B1B;           /* Texto rojo oscuro para errores */
+    --success-bg: #D1FAE5;           /* Fondo verde suave para éxitos */
+    --success-text: #065F46;         /* Texto verde oscuro para éxitos */
+    
+    /* Efectos */
+    --shadow: 0 20px 40px -15px rgba(30, 58, 95, 0.15); /* Sombra con tono azulado */
+    --radius: 12px;                  /* Bordes redondeados */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #334155 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-primary);
+}
+
+
+/* Base para todos los formularios */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+    width: 100%;
+    max-width: 720px; /* Ancho base, se ajusta por página */
+    animation: slideUp 0.5s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+/* Animación de entrada */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Títulos y subtítulos */
+h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* FORMULARIOS */
+
+/* Grid base para formularios - 2 columnas en desktop */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Grupo de campo (label + input) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Campo de ancho completo (para correo, botones, etc.) */
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+/* Etiquetas de formulario */
+label {
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Inputs base - aplica a text, email, password */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #F8FAFC;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover en inputs */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+    border-color: #94A3B8;
+    background-color: #FFFFFF;
+}
+
+/* Focus en inputs - estado activo */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Placeholder con color suave */
+input::placeholder {
+    color: #94A3B8;
+    opacity: 1;
+    font-weight: 400;
+}
+
+/* BOTONES */
+
+/* Botón primario - acción principal */
+.btn-primary {
+    grid-column: span 2;
+    margin-top: 16px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+}
+
+/* Botón outline - acciones secundarias */
+.btn-outline {
+    padding: 10px 18px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+/* Botón peligro - acciones destructivas */
+.btn-danger {
+    padding: 10px 18px;
+    background: #EF4444;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.btn-danger:hover {
+    background: #DC2626;
+    transform: translateY(-1px);
+}
+
+/* Botón pequeño - para tablas */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.btn-sm.btn-edit { background: #F59E0B; color: #FFFFFF; }
+.btn-sm.btn-edit:hover { background: #D97706; }
+
+.btn-sm.btn-delete { background: #EF4444; color: #FFFFFF; }
+.btn-sm.btn-delete:hover { background: #DC2626; }
+
+/* MENSAJES Y FEEDBACK */
+
+/* Mensaje base - aplica a .msg.error y .msg.exito */
+.msg {
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.msg.error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border-left: 4px solid #EF4444;
+}
+
+.msg.exito {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border-left: 4px solid #10B981;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ENLACES Y FOOTER */
+
+.footer-link {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-link a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Enlace de regreso */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+    color: var(--primary-hover);
+}
+
+/* Badge/contador */
+.badge {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- LOGIN --- */
+.login-card { max-width: 440px; }
+.login-grid { grid-template-columns: 1fr; gap: 20px; }
+.login-grid .full-width { grid-column: span 1; }
+
+/* --- PERFIL --- */
+.profile-card { max-width: 850px; }
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.avatar-placeholder {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.profile-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.member-since {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.info-section, .form-section {
+    background: var(--bg-color);
+    padding: 24px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.info-section h3, .form-section h3 {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.info-item { margin-bottom: 14px; }
+
+.label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.value {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+}
+
+.profile-actions .btn-danger { margin-left: auto; }
+
+/* --- CAMBIAR CONTRASEÑA --- */
+.password-card { max-width: 480px; }
+.password-grid { grid-template-columns: 1fr; gap: 18px; }
+.password-grid .full-width { grid-column: span 1; }
+
+input[type="password"] {
+    font-family: monospace; /* Mejor legibilidad para contraseñas */
+    letter-spacing: 0.05em;
+}
+
+.security-note {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+
+/* RESPONSIVE */
+
+/* Tablets: 641px - 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .card { padding: 32px; max-width: 600px; }
+    .list-card { max-width: 750px; }
+    th, td { padding: 12px 14px; font-size: 0.9rem; }
+}
+
+/* Móviles: < 640px */
+@media (max-width: 640px) {
+    /* Ajustes generales de tarjeta */
+    .card { padding: 24px; border-top-width: 3px; }
+    h2 { font-size: 1.5rem; }
+    .subtitle { font-size: 0.9rem; margin-bottom: 24px; }
+    
+    /* Grid a 1 columna */
+    .form-grid { grid-template-columns: 1fr; gap: 16px; }
+    .form-group.full-width, .btn-primary { grid-column: span 1; }
+    .btn-primary { margin-top: 8px; padding: 12px 20px; font-size: 0.95rem; }
+    
+    /* Inputs más compactos */
+    label { font-size: 0.7rem; }
+    input[type="text"], input[type="email"], input[type="password"] {
+        padding: 10px 14px; font-size: 0.95rem;
+    }
+    
+    /* Perfil: apilar secciones */
+    .profile-header { flex-direction: column; text-align: center; }
+    .profile-header h2 { text-align: center; }
+    .profile-grid { grid-template-columns: 1fr; gap: 20px; }
+    .profile-actions { flex-direction: column; gap: 10px; }
+    .profile-actions .btn-danger, .btn-outline {
+        margin-left: 0; width: 100%; text-align: center;
+    }
+    
+    /* Tabla: acciones apiladas */
+    .actions { flex-direction: column; gap: 6px; }
+    .btn-sm { width: 100%; text-align: center; }
+    
+    /* Footer links en columna */
+    .footer-link a { display: block; margin: 4px 0; }
+    
+    /* Encabezado de lista */
+    .page-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .page-title { font-size: 1.25rem; }
+    .badge { font-size: 0.8rem; padding: 4px 12px; }
+}
