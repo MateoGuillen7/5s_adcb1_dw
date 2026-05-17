@@ -26,7 +26,7 @@ Sistema web completo para gestión de cuentas desarrollado en PHP + MySQL. Imple
 
 ## Como probar el sistema:
 1. Abre en tu navegador:
-   - http://localhost/5s_adcb1_dw/registrar_usuario.php
+   - http://localhost/5s_acdb1_dw/registrar_usuario.php
 2. Crea una cuenta con datos de prueba.
    - Serás redirigido al login. Inicia sesión con las credenciales creadas.
 3. Explora las funcionalidades:
