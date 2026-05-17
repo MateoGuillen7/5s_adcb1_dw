@@ -1,6 +1,6 @@
 #  Sistema de Registro y Autenticación de Usuarios
 
-Sistema web completo para gestión de cuentas desarrollado en PHP + MySQL. Implementa registro, inicio de sesión seguro, edición de perfil, cambio de contraseña y cierre de sesión, siguiendo buenas prácticas de seguridad, separación de responsabilidades y experiencia de usuario.
+Sistema web completo para gestión de cuentas desarrollado en PHP + MySQL. Implementación de registro, inicio de sesión seguro, edición de perfil, cambio de contraseña y cierre de sesión, siguiendo buenas prácticas de seguridad, separación de responsabilidades y experiencia de usuario.
 
 ## Características principales:
 - Autenticación segura con password_hash() / password_verify()
