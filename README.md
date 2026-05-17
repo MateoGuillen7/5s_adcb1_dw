@@ -33,7 +33,9 @@ Sistema web completo para gestión de cuentas desarrollado en PHP + MySQL. Imple
    - Edita nombre/correo en perfil_usuario.php
    - Cambia contraseña en cambiar_password.php
    - Cierra sesión y verifica que el acceso a rutas privadas sea bloqueado.
-4. Prueba la seguridad:
+4. Usuario de prueba:
+   - roberto@gmail.com - clave: 123456
+5. Prueba la seguridad:
    - Intenta acceder a perfil_usuario.php sin iniciar sesión → Debe redirigir al login.
    - Ingresa contraseñas distintas → Validación JS y PHP bloquean el envío.
    - Espera 30 min de inactividad → La sesión expira automáticamente.
