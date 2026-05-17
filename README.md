@@ -2,7 +2,7 @@
 
 Sistema web completo para gestión de cuentas desarrollado en PHP + MySQL. Implementa registro, inicio de sesión seguro, edición de perfil, cambio de contraseña y cierre de sesión, siguiendo buenas prácticas de seguridad, separación de responsabilidades y experiencia de usuario.
 
-Características principales:
+## Características principales:
 - Autenticación segura con `password_hash()` / `password_verify()`
 - Sentencias preparadas PDO (protección contra inyección SQL)
 - Tokens CSRF en formularios críticos (perfil y cambio de contraseña)
@@ -11,7 +11,7 @@ Características principales:
 - Interfaz responsive con paleta profesional y validación en cliente + servidor
 - Arquitectura limpia: lógica PHP, HTML semántico y CSS unificado
 
-Instalación y configuración local:
+## Instalación y configuración local:
 1. Descargar o clonar el proyecto
    git clone https://github.com/MateoGuillen7/5s_adcb1_dw.git
 2. Iniciar servicios
@@ -24,7 +24,7 @@ Instalación y configuración local:
    - Selecciona el archivo registro_de_usuarios.sql incluido en la carpeta del proyecto
    - Haz clic en Continuar (se creará la BD registro_de_usuarios y la tabla usuarios automáticamente)
 
-Como probar el sistema:
+## Como probar el sistema:
 1. Abre en tu navegador:
    - http://localhost/5s_adcb1_dw/registrar_usuario.php
 2. Crea una cuenta con datos de prueba.
