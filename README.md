@@ -3,7 +3,7 @@
 Sistema web completo para gestión de cuentas desarrollado en PHP + MySQL. Implementa registro, inicio de sesión seguro, edición de perfil, cambio de contraseña y cierre de sesión, siguiendo buenas prácticas de seguridad, separación de responsabilidades y experiencia de usuario.
 
 ## Características principales:
-- Autenticación segura con `password_hash()` / `password_verify()`
+- Autenticación segura con password_hash() / password_verify()
 - Sentencias preparadas PDO (protección contra inyección SQL)
 - Tokens CSRF en formularios críticos (perfil y cambio de contraseña)
 - Timeout de sesión por inactividad (30 minutos)
